@@ -259,34 +259,34 @@
 
 // 5. Өгөгдсөн массивийн сөрөг тоонуудыг зүүн талд нь байрлуул
 
-const toLeft = (arr) => {
-  let j = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < 0) {
-      let t = arr[j];
-      arr[j] = arr[i];
-      arr[i] = t;
-      j++;
-    }
-  }
-  return arr;
-};
-console.log(toLeft([6, 26, -65, -2]));
+// const toLeft = (arr) => {
+//   let j = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < 0) {
+//       let t = arr[j];
+//       arr[j] = arr[i];
+//       arr[i] = t;
+//       j++;
+//     }
+//   }
+//   return arr;
+// };
+// console.log(toLeft([6, 26, -65, -2]));
 
-// 6. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв. Тэр тоог ол
-const FindNum = (arrNum) => {
-  MaxNum = Math.max(...arrNum);
-  MinNum = Math.min(...arrNum);
-  totalNum = ((MinNum + MaxNum) * (arrNum.length + 1)) / 2;
-  totalArr = 0;
-  for (let i = 0; i < arrNum.length; i++) {
-    totalArr += arrNum[i];
-  }
-  let foundNum = totalNum - totalArr;
-  return foundNum;
-};
+// // 6. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв. Тэр тоог ол
+// const FindNum = (arrNum) => {
+//   MaxNum = Math.max(...arrNum);
+//   MinNum = Math.min(...arrNum);
+//   totalNum = ((MinNum + MaxNum) * (arrNum.length + 1)) / 2;
+//   totalArr = 0;
+//   for (let i = 0; i < arrNum.length; i++) {
+//     totalArr += arrNum[i];
+//   }
+//   let foundNum = totalNum - totalArr;
+//   return foundNum;
+// };
 
-console.log(FindNum([1, 2, 3, 5]));
+// console.log(FindNum([1, 2, 3, 5]));
 
 // 1. Массив болон тоо өгөгдөв. Өгөгдсөн тоо массив байгаа бол дугаарыг нь, байхгүй бол -1 буцаа
 // 2. Өгөгдсөн массивын элементүүдийг хойш нь нэг цикл шилжилт хий. Өөрөөр хэлбэл 1-рийг 2-рт, 2-рыг 3-рт, гэх мэт сүүлийн элементийг 1-рт тус тус шилжүүл.
@@ -306,16 +306,16 @@ console.log(FindNum([1, 2, 3, 5]));
 //     Given the initial value of  for each of Sam's  students, write code to automate the rounding process.
 
 // 1. Массив болон тоо өгөгдөв. Өгөгдсөн тоо массив байгаа бол дугаарыг нь, байхгүй бол -1 буцаа
-const backMyNumber = (arr, num) => {
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] === num) {
-      return i;
-    }
-  }
-  return -1;
-};
+// const backMyNumber = (arr, num) => {
+//   for (i = 0; i < arr.length; i++) {
+//     if (arr[i] === num) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// };
 
-console.log(backMyNumber([1, 2, 4, 4, 5], 6));
+// console.log(backMyNumber([1, 2, 4, 4, 5], 6));
 
 // 2. Өгөгдсөн массивын элементүүдийг хойш нь нэг цикл шилжилт хий. Өөрөөр хэлбэл 1-рийг 2-рт, 2-рыг 3-рт, гэх мэт сүүлийн элементийг 1-рт тус тус шилжүүл.
 //     Жич: 1 2 3 4 5 -> 5 1 2 3 4
@@ -331,17 +331,129 @@ console.log(backMyNumber([1, 2, 4, 4, 5], 6));
 // };
 // console.log(toStep([6, 26, -65, -2]));
 
-const lastFun = (arr) => {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > 38 && arr[i] % 5 >= 3) {
-      let uldegdel = arr[i] % 5;
-      newArr.push(arr[i] - uldegdel + 5);
-    } else {
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr;
-};
+// const lastFun = (arr) => {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 38 && arr[i] % 5 >= 3) {
+//       let uldegdel = arr[i] % 5;
+//       newArr.push(arr[i] - uldegdel + 5);
+//     } else {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   return newArr;
+// };
 
-console.log(lastFun([6, 26, 65, 26, 50, 72, 65, 76, 80, 98]));
+// console.log(lastFun([6, 26, 65, 26, 50, 72, 65, 76, 80, 98]));
+
+// box.addEventListener("click", () => {
+//   if (box.style.backgroundColor === "red") {
+//     box.style.backgroundColor = "black";
+//   } else {
+//     box.style.backgroundColor = "red";
+//   }
+// });
+
+// const box = document.getElementsByClassName("black-box")[0];
+// const plus = document.querySelector("#plus-btn");
+// const min = document.querySelector("#min-btn");
+// let number = 0;
+
+// plus.addEventListener("click", () => {
+//   number++;
+//   box.textContent = number;
+// });
+
+// min.addEventListener("click", () => {
+//   number--;
+//   box.textContent = number;
+// });
+
+// const boxes = document.querySelectorAll(".box");
+// const btn = document.querySelector("button");
+// let x = "X";
+// let o = "O";
+// let click = true;
+// console.table(boxes);
+// boxes.forEach((box) => {
+//   box.addEventListener("click", () => {
+//     if (click === true && box.textContent !== o) {
+//       box.textContent = x;
+//       click = false;
+//     }
+//     if (click === false && box.textContent !== x) {
+//       box.textContent = o;
+//       click = true;
+//     }
+//   });
+// });
+
+// console.log(btn);
+
+// btn.addEventListener("click", () => {
+//   boxes.forEach((box) => {
+//     box.textContent = "";
+//   });
+// });
+
+// if (boxes[0].textContent === x) alert("Winner X");
+
+const btnNext = document.querySelector(".next");
+const btnPrev = document.querySelector(".prev");
+const slides = document.querySelectorAll("img");
+
+// btnNext.addEventListener("click", () => {
+//   images.forEach((img) => {
+//     img.className;
+//   });
+// });
+
+console.log(slides);
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((img, i) => {
+    img.style.display = i === index ? "block" : "none";
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function previousSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+
+const time = document.querySelector("#time");
+const startBtn = document.querySelector("#start-btn");
+const pauseBtn = document.querySelector("#pause-btn");
+const resetBtn = document.querySelector("#reset-btn");
+
+let sec = 0;
+let timeInterval = null;
+
+startBtn.addEventListener("click", () => {
+  if (!timeInterval) {
+    timeInterval = setInterval(() => {
+      sec += 0.1;
+      time.innerHTML = sec.toFixed(1);
+    }, 100);
+  }
+});
+
+pauseBtn.addEventListener("click", () => {
+  timeInterval = clearInterval(timeInterval);
+});
+
+resetBtn.addEventListener("click", () => {
+  timeInterval = clearInterval(timeInterval);
+  sec = "0.0";
+  time.innerHTML = sec;
+  sec = 0;
+});

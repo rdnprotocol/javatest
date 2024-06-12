@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.landing {
+  background-color: #252b42;
+  width: 100%;
+  height: 777px;
+}
+
+.navbar {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  width: 1322px;
+  margin: auto;
+  padding: 40px;
+  align-items: center;
+}
+
+/* .login {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 40px;
+} */
+
+.menus {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  column-gap: 30px;
+}
+.brandne {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.landing-content {
+  display: flex;
+  justify-content: space-around;
+  border: solid 1px red;
+}
+
+.landing-content .content {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  row-gap: 40px;
+  border: solid 1px red;
+}
+
+.landing-content .content .btn-more {
+  display: flex;
+  column-gap: 40px;
+}
+
+.landing-content .content .Welcome {
+  color: #23a6f0;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.landing-content .content .best {
+  font-weight: 700;
+  font-size: 58px;
+}
+
+.landing-content .content .r {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.btn-more .Get {
+  background-color: #23a6f0;
+  border-radius: 3px;
+  font-weight: 700;
+  padding: 15px 40px;
+}
+
+.btn-more .Learnmore {
+  color: #23a6f0;
+  border-radius: 2px;
+  font-weight: 700;
+  padding: 15px 40px;
+  border: solid 3px #23a6f0;
+}
+
+.box {
+  border: solid 1px black;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  text-align: center;
+}
+.box-container {
+  background-color: white;
+  display: grid;
+  height: 300px;
+  width: 300px;
+  grid-template-columns: auto auto auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.img-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+}
+
+.img {
+  width: 400%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img > div {
+  height: 100%;
+  width: calc(100% / 4);
+}
+
+img {
+  object-fit: cover;
+}
+.images {
+  height: 800px;
+  width: 550px;
+  border: solid 2px green;
+}
+
+.time-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#time {
+  text-align: center;
+}

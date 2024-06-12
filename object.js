@@ -108,17 +108,55 @@
 //   return newArr;
 // };
 
-let arr = [6, 26, 65, 26, 50, 72, 65, 78, 80, 98];
+let arr = [62, 26, 65, 26, 50, 72, 65, 78, 80, 98];
 
-let newArr = arr.map((el) => {
-  if (el > 38 && el % 5 >= 3) {
-    let uldegdel = el % 5;
-    return el - uldegdel + 5;
+// let newArr = arr.map((el) => {
+//   if (el > 38 && el % 5 >= 3) {
+//     let uldegdel = el % 5;
+//     return el - uldegdel + 5;
+//   }
+//   return el;
+// });
+
+// console.log(newArr);
+
+// const filteredArray = arr.filter((el) => el % 2 === 1);
+// console.log(filteredArray);
+
+// console.table(arr);
+
+//selectionSort
+
+const findMinIndex = (arr, start) => {
+  let minIndex = start;
+  for (let i = start + 1; i < arr.lenght; i++) {
+    if (arr[i] < arr[minIndex]) {
+      minIndex = i;
+    }
   }
-  return el;
-});
+  return minIndex;
+};
 
-console.log(newArr);
+const selectionSort = (arr) => {
+  for (let i = 0; i < arr.lenght; i++) {
+    let minIndex = findMinIndex(arr, i);
+    swap(arr, i, minIndex);
+  }
+};
 
-const filteredArray = arr.filter((el) => el % 2 === 1);
-console.log(filteredArray);
+console.log(arr);
+
+selectionSort(arr);
+
+console.log(arr);
+
+//Sort
+
+// let str = ["gaaaa", "bb", "ccc", "addd"];
+
+// str.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+//   return 0;
+// });
+// console.log(str);
