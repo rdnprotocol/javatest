@@ -14,24 +14,64 @@ body {
   top: 0px;
   left: 0px;
   right: 0px;
+  background-color: #999999;
+}
+
+#checkbox {
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid red;
 }
 
 .cards {
   height: fit-content;
-  width: 900px;
+  width: 100%;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.cards > div {
+  width: 350px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+
+.title {
+  height: 60px;
+  font-size: 24px;
+  color: white;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 10px;
 }
 .card {
   display: flex;
   justify-content: space-between;
+  color: white;
+  height: fit-content;
 }
 .card p {
   font-weight: 100;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  column-gap: 5px;
+}
+
 .card h1 {
-  font-weight: 100;
+  font-weight: 700;
   text-decoration: underline;
+  font-size: 14px;
+}
+
+.priority {
+  color: grey;
 }
 
 .modal-container form {
@@ -43,11 +83,37 @@ body {
   height: fit-content;
   width: 700px;
   background-color: white;
+  border-radius: 10px;
+  font-size: 32px;
+  border: 3px solid greenyellow;
 }
 .modal-title {
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+#input {
+  width: 400px;
+  height: 20px;
+}
+#desc {
+  width: 400px;
+  height: 100px;
+}
+
+#priority {
+  width: 400px;
+  height: 20px;
+}
+
+#status {
+  width: 400px;
+  height: 20px;
+}
+
+.modalcontainer {
+  opacity: 1;
 }
 
 .container {
@@ -58,11 +124,55 @@ body {
   top: 0px;
   height: 100vh;
   width: 100%;
-  opacity: 0.4;
-  background-color: black;
+  opacity: 1;
   visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal {
   visibility: visible;
+}
+
+.delete {
+  background-color: red;
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+  color: aliceblue;
+  text-align: center;
+}
+.edit {
+  background-color: blue;
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+  color: aliceblue;
+  text-align: center;
+}
+
+button {
+  height: 50px;
+  width: 80px;
+  background-color: greenyellow;
+  border-radius: 5px;
+}
+
+#closeBtn {
+  background-color: greenyellow;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-weight: 300;
+  border: 1px solid #1a1a1a;
+  font-size: 24px;
+}
+
+.done {
+  background-color: green;
+  border-radius: 5px;
+  height: 25px;
+  width: fit-content;
+  color: aliceblue;
+  text-align: center;
 }

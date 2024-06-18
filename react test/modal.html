@@ -4,20 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./modal.css" />
-    <title>Document</title>
+    <title>Todo</title>
   </head>
   <body class="body">
-    <button id="newBtn">New Modal</button>
-    <div class="cards"></div>
+    <button id="newBtn">New Task</button>
+    <div class="cards">
+      <div id="todo">
+        <div class="title">To Do</div>
+        <div class="card-container"></div>
+      </div>
+      <div id="inProgress">
+        <div class="title">In Progress</div>
+        <div class="card-container"></div>
+      </div>
+      <div id="done">
+        <div class="title">Done</div>
+        <div class="card-container"></div>
+      </div>
+      <div id="blocked">
+        <div class="title">Blocked</div>
+        <div class="card-container"></div>
+      </div>
+    </div>
+
     <div class="container" id="container">
+      <!-- <div class="background"></div> -->
       <div class="modal-container">
         <form action="">
           <div class="modal-title">
-            <div>hi modal</div>
-            <button id="closeBtn">X</button>
+            <div>New Task</div>
+            <div id="closeBtn">x</div>
           </div>
-          <input type="text" id="input" />
-          <textarea name="desc" id="desc"></textarea>
+          <input type="text" id="input" placeholder="title" />
+          <textarea name="desc" id="desc" placeholder="Desc"></textarea>
+          <select id="priority">
+            <option value="HIGH">HIGH</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="LOW">LOW</option>
+          </select>
+          <select id="status">
+            <option value="todo">To Do</option>
+            <option value="inProgress">In Progress</option>
+            <option value="done">Done</option>
+            <option value="blocked">Blocked</option>
+          </select>
+
           <button type="submit">Create</button>
         </form>
       </div>
