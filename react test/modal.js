@@ -19,7 +19,7 @@ let index = 0;
 let edittingItem = null;
 const cardtemp = (title, description, id, priority) => {
   return `<div class="card">
-  <button onclick= "changeMode(${id})" class="done">Done</button>
+  <button onclick="changeMode(${id})" class="done">Done</button>
   <div class="content">
     <h1>${title}</h1>
     <p>${description}</p>
@@ -36,6 +36,7 @@ const cardtemp = (title, description, id, priority) => {
 };
 
 newBtn.addEventListener("click", () => {
+  Form.querySelector("button").textContent = "Create";
   container.classList.add("modal");
 });
 
@@ -92,42 +93,67 @@ const render = () => {
 };
 
 Form.addEventListener("submit", (ev) => {
+  isCreate = Form.querySelector("button").textContent;
   ev.preventDefault();
   //datagaa awch bna
+  if (isCreate === "Create") {
+    // let priorityIndex;
+    const title = titleInput.value;
+    const desc = descInput.value;
+    const priority = priorityInput.value;
+    const priorityIndex = priorityInput.selectedIndex;
+    const statusIndex = statusInput.selectedIndex;
+    const mydate = new Date();
+    const newData = [
+      ...data,
+      {
+        id: index,
+        title: title,
+        description: desc,
+        priority: priority,
+        priorityIndex: priorityIndex,
+        statusIndex: statusIndex,
+        date: mydate,
+        modifyDate: null,
+      },
+    ];
 
-  // let priorityIndex;
-  const title = titleInput.value;
-  const desc = descInput.value;
-  const priority = priorityInput.value;
-  const priorityIndex = priorityInput.selectedIndex;
-  const statusIndex = statusInput.selectedIndex;
-  const mydate = new Date();
-  const newData = [
-    ...data,
-    {
-      id: index,
-      title: title,
-      description: desc,
-      priority: priority,
-      priorityIndex: priorityIndex,
-      statusIndex: statusIndex,
-      date: mydate,
-    },
-  ];
-
-  index++;
-  setData(newData);
-  container.classList.remove("modal");
-  titleInput.value = "";
-  descInput.value = "";
+    index++;
+    setData(newData);
+    container.classList.remove("modal");
+    titleInput.value = "";
+    descInput.value = "";
+  }
+  if (isCreate === "Edit") {
+    const title = titleInput.value;
+    const desc = descInput.value;
+    const priority = priorityInput.value;
+    const priorityIndex = priorityInput.selectedIndex;
+    const statusIndex = statusInput.selectedIndex;
+    const modifyDate = new Date();
+    const updatedData = data.map((el) => {
+      if (el.id === edittingItem) {
+        (el.title = title),
+          (el.description = desc),
+          (el.priority = priority),
+          (el.priorityIndex = priorityIndex),
+          (el.statusIndex = statusIndex),
+          (el.modifyDate = modifyDate);
+      }
+      return el;
+    });
+    setData(updatedData);
+    container.classList.remove("modal");
+  }
 });
 render();
 
+//delete hiih
 const deleteItem = (id) => {
   const newData = [...data].filter((item) => item.id !== id);
   setData(newData);
 };
-
+//status done bolgoh
 const changeMode = (id) => {
   const newData = data.map((el) => {
     if (el.id === id) {
@@ -135,22 +161,20 @@ const changeMode = (id) => {
     }
     return el;
   });
-  setData(newData);
+  statusInput = setData(newData);
 };
+
+//statusiin lawlah
+const statuses = ["todo", "inProgress", "done", "blocked"];
+
+//edit modal duudah
 const editItem = (id) => {
+  edittingItem = id;
+  Form.querySelector("button").textContent = "Edit";
+  const el = data.find((item) => item.id === id);
+  titleInput.value = el.title;
+  descInput.value = el.description;
+  priorityInput.value = el.priority;
+  statusInput.value = statuses[Number(el.statusIndex)];
   container.classList.add("modal");
-  titleInput.value = edittingItem.title;
-  descInput.value = edittingItem.description;
-  priorityInput.value = edittingItem.priority;
-  const title = titleInput.value;
-  const desc = descInput.value;
-  const priority = priorityInput.value;
-  const priorityIndex = priorityInput.selectedIndex;
-  const updatedData = data.map((el) => {
-    if (el.id === id) {
-      (el.title = title), (el.description = desc), (el.priority = priority);
-    }
-    return el;
-  });
-  setData(updatedData);
 };
